@@ -1,0 +1,20 @@
+{
+     "name": "tomkyle/uploader",
+     "type": "project",
+
+     "autoload": {
+         "psr-4": {
+             "tomkyle\\Uploader\\":   "src"
+         }
+     },
+
+    "require": {
+        "mnapoli/silly": "^1.8",
+        "php-di/php-di": "^6.0",
+        "vlucas/phpdotenv": "^5.4",
+        "league/flysystem": "^3.0",
+        "league/flysystem-memory": "^3.0",
+        "league/flysystem-path-prefixing": "^3.3",
+        "league/flysystem-ftp": "^3.0"
+    }
+}
