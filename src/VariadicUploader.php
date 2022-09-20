@@ -14,7 +14,7 @@ class VariadicUploader
         $this->setUploader($uploader);
     }
 
-    public function setUploader(Uploader $uploader) : self
+    public function setUploader(Uploader $uploader): self
     {
         $this->uploader = $uploader;
         return $this;

@@ -16,7 +16,7 @@ class FlysystemUploader implements Uploader
         $this->setFilesystem($filesystem);
     }
 
-    public function setFilesystem(Flysystem\Filesystem $filesystem) : self
+    public function setFilesystem(Flysystem\Filesystem $filesystem): self
     {
         $this->filesystem = $filesystem;
         return $this;

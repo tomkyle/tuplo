@@ -21,13 +21,13 @@ class DownloadableUploader implements Uploader
         $this->setDownloadPrefix($download_prefix);
     }
 
-    public function setDownloadPrefix(string $download_prefix) : self
+    public function setDownloadPrefix(string $download_prefix): self
     {
         $this->download_prefix = $download_prefix;
         return $this;
     }
 
-    public function setUploader(Uploader $uploader) : self
+    public function setUploader(Uploader $uploader): self
     {
         $this->uploader = $uploader;
         return $this;
