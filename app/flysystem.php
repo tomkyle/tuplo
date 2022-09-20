@@ -32,4 +32,3 @@ return array(
         ]);
     }
 );
-            // Instantiate the filesystem
