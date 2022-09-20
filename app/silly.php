@@ -23,15 +23,14 @@ return array(
     Silly\Application::class => function($dic) : Silly\Application
     {
         $app = new Silly\Application();
+        $uploader = $dic->get(Uploader\VariadicUploader::class);
 
-        $app->command('typora source1 [source2]', function ($source1, $source2, OutputInterface $output) use ($dic) {
+        $app->command('typora source1 [source2]', function ($source1, $source2) use ($uploader) {
             $sources = array_filter([$source1, $source2]);
 
-            $uploader = $dic->get(Uploader\VariadicUploader::class);
-            $result = $uploader( ...$sources );
-            $result_str = implode(PHP_EOL, $result);
+            $results = $uploader( ...$sources );
 
-            $output->writeln($result);
+            echo implode(PHP_EOL, $results), PHP_EOL;
         });
 
         return $app;
