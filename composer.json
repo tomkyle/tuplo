@@ -2,6 +2,10 @@
     "name": "tomkyle/uploader",
     "type": "project",
 
+    "bin": [
+        "tup"
+    ],
+
     "autoload": {
         "psr-4": {
             "tomkyle\\Uploader\\": "src"
