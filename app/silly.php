@@ -19,19 +19,19 @@ return array(
         return new Uploader\VariadicUploader($uploader);
     },
 
+    Uploader\TyporaUploader::class => function($dic) : Uploader\TyporaUploader
+    {
+        $uploader = $dic->get(Uploader\VariadicUploader::class);
+        return new Uploader\TyporaUploader($uploader);
+    },
+
 
     Silly\Application::class => function($dic) : Silly\Application
     {
         $app = new Silly\Application();
-        $uploader = $dic->get(Uploader\VariadicUploader::class);
+        $uploader = $dic->get(Uploader\TyporaUploader::class);
 
-        $app->command('typora source1 [source2]', function ($source1, $source2) use ($uploader) {
-            $sources = array_filter([$source1, $source2]);
-
-            $results = $uploader( ...$sources );
-
-            echo implode(PHP_EOL, $results), PHP_EOL;
-        });
+        $app->command('typora source1 [source2]', $uploader);
 
         return $app;
     }
