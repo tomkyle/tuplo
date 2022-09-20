@@ -1,5 +1,6 @@
 # tomkyle/uploader
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ```bash
 $ git clone git@github.com:tomkyle/uploader.git

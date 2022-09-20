@@ -1,6 +1,18 @@
 {
     "name": "tomkyle/uploader",
-    "type": "project",
+    "type": "library",
+
+    "description": "Upload script for use with CLI and/or Typora",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Carsten Witt",
+            "email": "tomkyle@posteo.de",
+            "homepage": "https://tomkyle.net",
+            "role": "Developer"
+        }
+    ],
 
     "bin": [
         "tup"
