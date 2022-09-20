@@ -1,20 +1,50 @@
 {
-     "name": "tomkyle/uploader",
-     "type": "project",
+    "name": "tomkyle/uploader",
+    "type": "project",
 
-     "autoload": {
-         "psr-4": {
-             "tomkyle\\Uploader\\":   "src"
-         }
-     },
+    "autoload": {
+        "psr-4": {
+            "tomkyle\\Uploader\\": "src"
+        }
+    },
 
     "require": {
-        "mnapoli/silly": "^1.8",
-        "php-di/php-di": "^6.0",
-        "vlucas/phpdotenv": "^5.4",
-        "league/flysystem": "^3.0",
-        "league/flysystem-memory": "^3.0",
         "league/flysystem-path-prefixing": "^3.3",
-        "league/flysystem-ftp": "^3.0"
+        "vlucas/phpdotenv": "^5.4",
+        "league/flysystem-memory": "^3.0",
+        "php-di/php-di": "^6.0",
+        "league/flysystem-ftp": "^3.0",
+        "mnapoli/silly": "^1.8",
+        "league/flysystem": "^3.0"
+    },
+
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "friendsofphp/php-cs-fixer": "^2.0|^3.0",
+        "phpspec/prophecy": "^1.15",
+        "phpunit/phpunit": "^9.5",
+        "php-coveralls/php-coveralls": "^2.0",
+        "phpstan/phpstan": "^1.0"
+    },
+
+    "scripts": {
+        "phpcs": [
+            "@phpcs:dry"
+        ],
+
+        "phpcs:apply": "php-cs-fixer fix --verbose --diff src/",
+        "phpcs:dry": "php-cs-fixer fix --verbose --diff --dry-run src/",
+
+        "phpstan": "phpstan analyse",
+
+        "phpunit": "phpunit --testdox",
+        "test": [
+            "@test:unit"
+        ],
+
+        "test:unit": [
+            "@phpunit --testsuite unit"
+        ]
+
     }
 }

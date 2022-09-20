@@ -46,7 +46,10 @@ _schrott
 .env
 vendor
 phpunit.xml
-
+phpstan.neon
+.php-cs-fixer.php
+.php-cs-fixer.cache
+tests/build
 
 
 

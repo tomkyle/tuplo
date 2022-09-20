@@ -1,9 +1,9 @@
 <?php
+
 namespace tomkyle\Uploader;
 
 class DownloadableUploader implements Uploader
 {
-
     /**
      * @var Uploader
      */
@@ -17,11 +17,23 @@ class DownloadableUploader implements Uploader
 
     public function __construct(Uploader $uploader, string $download_prefix)
     {
-        $this->uploader = $uploader;
-        $this->download_prefix = $download_prefix;
+        $this->setUploader($uploader);
+        $this->setDownloadPrefix($download_prefix);
     }
 
-    public function __invoke(string $source ) : string
+    public function setDownloadPrefix(string $download_prefix) : self
+    {
+        $this->download_prefix = $download_prefix;
+        return $this;
+    }
+
+    public function setUploader(Uploader $uploader) : self
+    {
+        $this->uploader = $uploader;
+        return $this;
+    }
+
+    public function __invoke(string $source): string
     {
         $result = ($this->uploader)($source);
         $result = preg_replace("!^\/!", "", $result);
