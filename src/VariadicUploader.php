@@ -9,11 +9,6 @@ class VariadicUploader
      */
     public $uploader;
 
-    /**
-     * @var string
-     */
-    public $separator = \PHP_EOL;
-
     public function __construct(Uploader $uploader)
     {
         $this->setUploader($uploader);
