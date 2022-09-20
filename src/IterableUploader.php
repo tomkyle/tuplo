@@ -4,20 +4,11 @@ namespace tomkyle\Uploader;
 
 class IterableUploader
 {
-    /**
-     * @var Uploader
-     */
-    public $uploader;
+    use UploaderAwareTrait;
 
     public function __construct(Uploader $uploader)
     {
         $this->setUploader($uploader);
-    }
-
-    public function setUploader(Uploader $uploader): self
-    {
-        $this->uploader = $uploader;
-        return $this;
     }
 
     /**

@@ -4,10 +4,7 @@ namespace tomkyle\Uploader;
 
 class DownloadableUploader implements Uploader
 {
-    /**
-     * @var Uploader
-     */
-    public $uploader;
+    use UploaderAwareTrait;
 
     /**
      * @var string
@@ -24,12 +21,6 @@ class DownloadableUploader implements Uploader
     public function setDownloadPrefix(string $download_prefix): self
     {
         $this->download_prefix = $download_prefix;
-        return $this;
-    }
-
-    public function setUploader(Uploader $uploader): self
-    {
-        $this->uploader = $uploader;
         return $this;
     }
 
