@@ -1,6 +1,5 @@
 <?php
 use tomkyle\Uploader;
-use Symfony\Component\Console\Output\OutputInterface;
 
 return array(
 
@@ -17,10 +16,15 @@ return array(
 
         $configs = $dic->get('Configs.Array');
 
-        foreach($configs as $name => $config)
+        foreach($configs as $use => $config)
         {
-            $pattern = sprintf('%s [--name=] sources*', $name);
-            $app->command($pattern, Uploader\VariadicUploadCommand::class)->defaults(['name' => $name]);
+            $description = $config['description'] ?? sprintf("Use '%s' configuration", $use);
+            $pattern = sprintf('%s [--use=] sources*', $use);
+            $app->command($pattern, Uploader\VariadicUploadCommand::class)
+                ->defaults(['use' => $use])
+                ->descriptions($description, [
+                    '--use'   => sprintf("Name of upload configuration, defaults to '%s'", $use)
+                ]);
         }
 
         return $app;

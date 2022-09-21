@@ -53,6 +53,7 @@ Upload configurations can be stored in a  `.tuplo.yaml` file, either in `$HOME` 
 
 ```yaml
 typora:
+	description : Just a plain FTP example
     method      : ftp
     downloadUrl : "https://test.com/typora"
     host        : 'ftp.test.com'
