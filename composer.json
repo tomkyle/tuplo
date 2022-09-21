@@ -3,6 +3,13 @@
     "type": "library",
 
     "description": "Configurabe upload script for use with CLI and/or Typora",
+    "keywords": ["CLI", "upload", "uploader", "typora"],
+
+    "support": {
+        "issues": "https://github.com/tomkyle/tuplo/issues",
+        "docs": "https://github.com/tomkyle/tuplo"
+    },
+
     "license": "MIT",
 
     "authors": [
