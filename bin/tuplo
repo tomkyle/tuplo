@@ -2,6 +2,9 @@
 <?php
 try {
     $root_dir = dirname(__DIR__);
+	if (!is_file(sprintf('%s/vendor/autoload.php', $root_dir))) {
+	    $root_dir = dirname(__DIR__, 4);
+	}
     require $root_dir . '/vendor/autoload.php';
 
     $container = require_once $root_dir . '/app/container.php';
