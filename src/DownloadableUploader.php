@@ -30,7 +30,7 @@ class DownloadableUploader implements Uploader
     {
         // Store inner uploader's visibility setting
         $visibility_backup = $this->uploader->getVisibility();
-        $this->uploader->setVisibility($this->visibility);
+        $this->uploader->setVisibility("public");
 
         $result = ($this->uploader)($source);
         $result = preg_replace("!^\/!", "", $result);
