@@ -27,9 +27,9 @@ class VariadicUploadCommand
 
     /**
      * @param  string        $use     Configuration name to use
-     * @param  array<string> $sources Array with files to upload
+     * @param  array<string> $files Array with files to upload
      */
-    public function __invoke(string $use, $sources, OutputInterface $output): int
+    public function __invoke(string $use, $files, OutputInterface $output): int
     {
         $config = $this->configs->get($use);
         if (!is_array($config)) {
@@ -43,7 +43,7 @@ class VariadicUploadCommand
         // Allow for multiple uploads in one command line
         $uploader = new VariadicUploader($uploader);
 
-        $results = $uploader(...$sources);
+        $results = $uploader(...$files);
         $output->writeln($results);
 
         return Command::SUCCESS;
