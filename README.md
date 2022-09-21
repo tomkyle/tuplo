@@ -44,8 +44,13 @@ According to the above configuration sample, CLI usage goes like this.
 $ tuplo typora <file> [file] ...
 ```
 
-
 ## Development and testing
+
+This repo contains custom Git hooks to automate *composer installs* after *composer.lock* has changed after *git pull*. Run this command to stay tuned:
+
+```bash
+$ git config core.hooksPath git-hooks
+```
 
 ### Unit tests
 
