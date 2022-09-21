@@ -1,6 +1,6 @@
 # tuplo
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Tests passing](https://github.com/tomkyle/tuplo/actions/workflows/php.yml/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Tests passing](https://github.com/tomkyle/tuplo/actions/workflows/php.yml/badge.svg)](https://github.com/tomkyle/tuplo/actions/workflows/php.yml)
 
 **tuplo is a CLI upload tool. It can be configured with YAML files. Currently, these upload methods are supported:**
 
