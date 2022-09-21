@@ -4,6 +4,7 @@ namespace tomkyle\Uploader;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class VariadicUploadCommand
 {
@@ -25,12 +26,12 @@ class VariadicUploadCommand
 
 
     /**
-     * @param  string        $name    Configuration name
+     * @param  string        $use     Configuration name to use
      * @param  array<string> $sources Array with files to upload
      */
-    public function __invoke(string $name, $sources): int
+    public function __invoke(string $use, $sources): int
     {
-        $config = $this->configs->get($name);
+        $config = $this->configs->get($use);
         if (!is_array($config)) {
             $msg = sprintf("Invalid configuration: expected array, got %s", gettype($config));
             throw new \UnexpectedValueException($msg);

@@ -12,6 +12,7 @@
 # Plain old FTP
 # ----------------------------------------------------------
 ftp:
+    description : Use plain old FTP.
     method      : ftp
     downloadUrl : "https://test.com/downloads"
 
@@ -29,6 +30,7 @@ ftp:
 # SFTP with username and password
 # ----------------------------------------------------------
 sftp:
+    description           : Use sFTP which is more secure than FTP
     method                : sftp
     downloadUrl           : 'https://test.com/downloads'
 
@@ -58,6 +60,7 @@ sftp:
 # SFTP with SSH keyfile
 # ----------------------------------------------------------
 sftp_with_key:
+    description           : Use sFTP with SSH keys, no password in configuration file needed.
     method                : sftp
     downloadUrl           : 'https://test.com/downloads'
 
