@@ -19,7 +19,7 @@ return array(
         foreach($configs as $use => $config)
         {
             $description = $config['description'] ?? sprintf("Use '%s' configuration", $use);
-            $pattern = sprintf('%s [--use=] sources*', $use);
+            $pattern = sprintf('%s [--use=] files*', $use);
             $app->command($pattern, Uploader\VariadicUploadCommand::class)
                 ->defaults(['use' => $use])
                 ->descriptions($description, [
