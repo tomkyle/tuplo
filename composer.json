@@ -40,8 +40,7 @@
         "league/flysystem-memory": "^3.0",
         "league/flysystem-sftp-v3": "^3.0",
         "mnapoli/silly": "^1.8",
-        "mnapoli/silly-php-di": "^1.2",
-        "monolog/monolog": "^3.2"
+        "mnapoli/silly-php-di": "^1.2"
     },
 
     "require-dev": {
