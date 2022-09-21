@@ -10,6 +10,16 @@
 
 ## Installation 
 
+### Composer
+
+Use this to just install it globally:
+
+```bash
+$ compsoer global require tomkyle/tuplo
+```
+
+### Linux, Unix et.al.
+
 Grab repo content and install dependencies. You may want to symlink it in your `~/bin` directory:
 
 ```bash
