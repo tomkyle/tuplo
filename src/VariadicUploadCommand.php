@@ -29,7 +29,7 @@ class VariadicUploadCommand
      * @param  string        $use     Configuration name to use
      * @param  array<string> $sources Array with files to upload
      */
-    public function __invoke(string $use, $sources): int
+    public function __invoke(string $use, $sources, OutputInterface $output): int
     {
         $config = $this->configs->get($use);
         if (!is_array($config)) {
@@ -44,7 +44,7 @@ class VariadicUploadCommand
         $uploader = new VariadicUploader($uploader);
 
         $results = $uploader(...$sources);
-        echo implode(PHP_EOL, $results), PHP_EOL;
+        $output->writeln($results);
 
         return Command::SUCCESS;
     }
