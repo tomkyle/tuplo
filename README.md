@@ -15,7 +15,6 @@ Grab repo content and install dependencies. You may want to symlink it in your `
 ```bash
 $ git clone git@github.com:tomkyle/tuplo.git
 $ cd tuplo
-$ composer install
 
 # Symlink if needed
 $ ln -s "${PWD}/bin/tuplo" ~/bin/tuplo
