@@ -7,7 +7,7 @@ try {
 	}
     require $root_dir . '/vendor/autoload.php';
 
-    $container = require_once $root_dir . '/app/container.php';
+    $container = require_once dirname(__DIR__) . '/app/container.php';
 
     $app = $container->get(\Silly\Application::class);
     $app->run();
