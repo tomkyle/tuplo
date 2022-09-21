@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 try {
-    $root_dir = __DIR__;
+    $root_dir = dirname(__DIR__);
     require $root_dir . '/vendor/autoload.php';
 
     $container = require_once $root_dir . '/app/container.php';
