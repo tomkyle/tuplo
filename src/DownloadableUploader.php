@@ -34,6 +34,7 @@ class DownloadableUploader implements Uploader
 
         $result = ($this->uploader)($source);
         $result = preg_replace("!^\/!", "", $result);
+        $result = $this->applyRawurlencode($result);
 
         // Restore previous visibility setting
         $this->uploader->setVisibility($visibility_backup);
@@ -44,5 +45,15 @@ class DownloadableUploader implements Uploader
         ]);
 
         return $out;
+    }
+
+    protected function applyRawurlencode(string $result) : string
+    {
+        $exploded = explode("/", $result);
+        $encoded = array_map(function($word) {
+            return rawurlencode($word);
+        }, $exploded);
+
+        return implode("/", $encoded);
     }
 }
