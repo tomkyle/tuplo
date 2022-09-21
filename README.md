@@ -8,14 +8,25 @@
 - SFTP with username/password
 - SFTP with SSH key
 
+---
+
 ## Installation 
 
-### Composer
+### Using Composer
 
-Use this to just install it globally:
+Install *tuplo* as global command:
 
 ```bash
-$ compsoer global require tomkyle/tuplo
+$ composer global require tomkyle/tuplo
+```
+
+Do not forget to make sure Composer’s global commands are available in `$PATH`:
+
+```bash
+# Unix, Linux, et al.
+export PATH="/home/<Username>/.config/composer/vendor/bin:${PATH}"
+# MacOS
+export PATH="/Users/you/.composer/vendor/bin:${PATH}"
 ```
 
 ### Linux, Unix et.al.
@@ -30,9 +41,15 @@ $ cd tuplo
 $ ln -s "${PWD}/bin/tuplo" ~/bin/tuplo
 ```
 
+### MacOS
+
+**To be done, I'm working on it.**
+
+---
+
 ## Configuration
 
-Upload configurations can be stored in a  `.tuplo.yaml` file, either in `$HOME` directory or in current work directory; with the latter preceding the first. See **[tuplo.dist.yaml](./tuplo.dist.yaml)** for examples – here an example for a plain old FTP upload. “typora” is the name of a single upload configuration, it is used as CLI parameter.
+Upload configurations can be stored in a  `.tuplo.yaml` file, either in `$HOME` directory or in current work directory; with the latter preceding the first. See **[tuplo.dist.yaml](./tuplo.dist.yaml)** for examples – here an example for a plain old FTP upload. In this example, “typora” is the name of a single upload configuration, it is used as CLI parameter.
 
 ```yaml
 typora:
@@ -46,6 +63,8 @@ typora:
     password    : 'ftp-password'
 ```
 
+---
+
 ## Usage
 
 According to the above configuration sample, CLI usage goes like this. 
@@ -54,13 +73,15 @@ According to the above configuration sample, CLI usage goes like this.
 $ tuplo typora <file> [file] ...
 ```
 
+---
+
 ## Development and testing
 
 This repo contains **custom Git hooks** to automate *composer installs* after *composer.lock* has changed after *git pull*. Read more [here.](./git-hooks/README.md)
 
 ### Unit tests
 
-Default configuration is **[phpunit.xml.dist](./phpunit.xml.dist).** Create a custom **phpunit.xml** to apply your own settings. 
+Default configuration is **[phpunit.xml.dist](./phpunit.xml.dist).** If you like, create a custom **phpunit.xml** to apply your own settings. 
 Also visit [phpunit.readthedocs.io](https://phpunit.readthedocs.io/) · [Packagist](https://packagist.org/packages/phpunit/phpunit)
 
 ```bash
@@ -71,7 +92,7 @@ $ vendor/bin/phpunit
 
 ### PhpStan
 
-Default configuration is **[phpstan.neon.dist](./phpstan.neon.dist).** Create a custom **phpstan.neon** to apply your own settings. 
+Default configuration is **[phpstan.neon.dist](./phpstan.neon.dist).** If you like, create a custom **phpstan.neon** to apply your own settings. 
 Also visit [phpstan.org](https://phpstan.org/) · [GitHub](https://github.com/phpstan/phpstan) · [Packagist](https://packagist.org/packages/phpstan/phpstan)
 
 ```bash
@@ -82,8 +103,7 @@ $ vendor/bin/phpstan analyse
 
 ### PhpCS
 
-Default configuration is **[.php-cs-fixer.dist.php](./.php-cs-fixer.dist.php).** Create a custom **.php-cs-fixer.php** to apply your own settings. 
-Also visit [cs.symfony.com](https://cs.symfony.com/) ·  [GitHub](https://github.com/FriendsOfPHP/PHP-CS-Fixer) · [Packagist](https://packagist.org/packages/friendsofphp/php-cs-fixer)
+Default configuration is **[.php-cs-fixer.dist.php](./.php-cs-fixer.dist.php).** If you like, create a custom **.php-cs-fixer.php** to apply your own settings. Also visit [cs.symfony.com](https://cs.symfony.com/) ·  [GitHub](https://github.com/FriendsOfPHP/PHP-CS-Fixer) · [Packagist](https://packagist.org/packages/friendsofphp/php-cs-fixer)
 
 ```bash
 $ composer phpcs
