@@ -1,8 +1,8 @@
 {
-    "name": "tomkyle/uploader",
+    "name": "tomkyle/tuplo",
     "type": "library",
 
-    "description": "Upload script for use with CLI and/or Typora",
+    "description": "Configurabe upload script for use with CLI and/or Typora",
     "license": "MIT",
 
     "authors": [
@@ -15,7 +15,7 @@
     ],
 
     "bin": [
-        "tup"
+        "bin/tuplo"
     ],
 
     "autoload": {
@@ -25,13 +25,15 @@
     },
 
     "require": {
-        "league/flysystem-path-prefixing": "^3.3",
-        "vlucas/phpdotenv": "^5.4",
-        "league/flysystem-memory": "^3.0",
         "php-di/php-di": "^6.0",
+        "symfony/yaml": "^6.1",
+        "league/flysystem": "^3.0",
         "league/flysystem-ftp": "^3.0",
+        "league/flysystem-path-prefixing": "^3.3",
+        "league/flysystem-memory": "^3.0",
+        "league/flysystem-sftp-v3": "^3.0",
         "mnapoli/silly": "^1.8",
-        "league/flysystem": "^3.0"
+        "mnapoli/silly-php-di": "^1.2"
     },
 
     "require-dev": {
@@ -48,8 +50,8 @@
             "@phpcs:dry"
         ],
 
-        "phpcs:apply": "php-cs-fixer fix --verbose --diff src/",
-        "phpcs:dry": "php-cs-fixer fix --verbose --diff --dry-run src/",
+        "phpcs:dry": "php-cs-fixer fix --verbose --diff --dry-run",
+        "phpcs:apply": "php-cs-fixer fix --verbose --diff",
 
         "phpstan": "phpstan analyse",
 

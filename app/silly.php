@@ -4,34 +4,24 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 return array(
 
-    Uploader\Uploader::class => function($dic) : Uploader\Uploader
+
+    Uploader\VariadicUploadCommand::class => function($dic) : Uploader\VariadicUploadCommand
     {
-        $filesystem = $dic->get(\League\Flysystem\Filesystem::class);
-        $uploader = new Uploader\FlysystemUploader($filesystem);
-
-        $prefix = dotenv('DOWNLOAD_PREFIX');
-        return new Uploader\DownloadableUploader($uploader, $prefix);
+        $configs = $dic->get('Configs.Container');
+        return new Uploader\VariadicUploadCommand($configs);
     },
-
-    Uploader\VariadicUploader::class => function($dic) : Uploader\VariadicUploader
-    {
-        $uploader = $dic->get(Uploader\Uploader::class);
-        return new Uploader\VariadicUploader($uploader);
-    },
-
-    Uploader\TyporaUploader::class => function($dic) : Uploader\TyporaUploader
-    {
-        $uploader = $dic->get(Uploader\VariadicUploader::class);
-        return new Uploader\TyporaUploader($uploader);
-    },
-
 
     Silly\Application::class => function($dic) : Silly\Application
     {
-        $app = new Silly\Application();
-        $uploader = $dic->get(Uploader\TyporaUploader::class);
+        $app = new Silly\Edition\PhpDi\Application("app", "v0", $dic);
 
-        $app->command('typora source1 [source2]', $uploader);
+        $configs = $dic->get('Configs.Array');
+
+        foreach($configs as $name => $config)
+        {
+            $pattern = sprintf('%s [--name=] sources*', $name);
+            $app->command($pattern, Uploader\VariadicUploadCommand::class)->defaults(['name' => $name]);
+        }
 
         return $app;
     }

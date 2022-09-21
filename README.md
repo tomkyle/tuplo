@@ -1,17 +1,48 @@
-# tomkyle/uploader
+# tuplo
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**tuplo is a CLI upload tool. It can be configured with YAML files. Currently, these upload methods are supported:**
+
+- FTP
+- SFTP with username/password
+- SFTP with SSH key
+
+## Installation 
+
+Grab repo content and install dependencies. You may want to symlink it in your `~/bin` directory:
+
 ```bash
-$ git clone git@github.com:tomkyle/uploader.git
+$ git clone git@github.com:tomkyle/tuplo.git
+$ cd tuplo
+$ composer install
+
+# Symlink if needed
+$ ln -s "${PWD}/bin/tuplo" ~/bin/tuplo
 ```
 
-Copy **env.dist** to `.env` and add FTP credentials.
+## Configuration
+
+Upload configurations can be stored in a  `.tuplo.yaml` file, either in `$HOME` directory or in current work directory; with the latter preceding the first. See **[tuplo.dist.yaml](./tuplo.dist.yaml)** for examples – here an example for a plain old FTP upload. “typora” is the name of a single upload configuration, it is used as CLI parameter.
+
+```yaml
+typora:
+    method      : ftp
+    downloadUrl : "https://test.com/typora"
+    host        : 'ftp.test.com'
+    port        : 21
+    ssl         : false
+    root        : 'path/to/typora'
+    username    : 'ftp-username'
+    password    : 'ftp-password'
+```
 
 ## Usage
 
+According to the above configuration sample, CLI usage goes like this. 
+
 ```bash
-$ tup typora <file1> [file2]
+$ tuplo typora <file> [file] ...
 ```
 
 

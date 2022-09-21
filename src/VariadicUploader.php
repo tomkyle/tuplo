@@ -2,7 +2,7 @@
 
 namespace tomkyle\Uploader;
 
-class VariadicUploader
+class VariadicUploader implements UploaderAware
 {
     use UploaderAwareTrait;
 

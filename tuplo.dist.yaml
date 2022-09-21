@@ -1,0 +1,73 @@
+# tuplo.dist.yaml
+
+# ==========================================================
+# Keys in this file are used as configuration name.
+# Configuration names are then used in CLI command, like so:
+#
+#    $ tuplo <config> file1 file2 ...
+#
+# ==========================================================
+
+# ----------------------------------------------------------
+# Plain old FTP
+# ----------------------------------------------------------
+ftp:
+    method      : ftp
+    downloadUrl : "https://test.com/downloads"
+
+    # Settings as used in Flysystem
+    host        : 'ftp.test.com'
+    port        : 21
+    ssl         : false
+    root        : 'path/to/downloads'
+
+    username    : 'ftp-username'
+    password    : 'ftp-password'
+
+
+# ----------------------------------------------------------
+# SFTP with username and password
+# ----------------------------------------------------------
+sftp:
+    method                : sftp
+    downloadUrl           : 'https://test.com/downloads'
+
+    # Flysystem Adapter Settings
+    # as used in their source code
+    host                  : 'test.com'
+    port                  : 22
+    root                  : 'path/to/downloads'
+
+    username              : 'ssh-username'
+    password              : 'ssh-password'
+    # privateKey          : "/Users/you/.ssh/id_rsa"
+    # privateKeyPass      : null
+
+    ### Experimental adapter settings:
+    ### Names as used in Flysystem, but I did not experiment with these.
+
+    # useAgent            : true
+    # timeout             : 10
+    # maxTries            : 4
+    # fingerprint         : null
+    # connectivityChecker : null
+
+
+
+# ----------------------------------------------------------
+# SFTP with SSH keyfile
+# ----------------------------------------------------------
+sftp_with_key:
+    method                : sftp
+    downloadUrl           : 'https://test.com/downloads'
+
+    # Flysystem Adapter Settings
+    # as used in their source code
+    host                  : 'test.com'
+    port                  : 22
+    root                  : 'path/to/downloads'
+
+    username              : 'ssh-username'
+    password              : null
+    privateKey            : "/Users/you/.ssh/id_rsa"
+    privateKeyPass        : null

@@ -6,15 +6,19 @@ use League\Flysystem;
 
 class FlysystemUploader implements Uploader
 {
+    use FlysystemVisibilityTrait;
+
     /**
      * @var Flysystem\Filesystem
      */
     public $filesystem;
 
+
     public function __construct(Flysystem\Filesystem $filesystem)
     {
         $this->setFilesystem($filesystem);
     }
+
 
     public function setFilesystem(Flysystem\Filesystem $filesystem): self
     {
@@ -35,7 +39,10 @@ class FlysystemUploader implements Uploader
             throw new \RuntimeException($msg);
         }
 
-        $this->filesystem->write($source, $source_content);
+        $this->filesystem->write($source, $source_content, [
+            'visibility'           => $this->visibility,
+            'directory_visibility' => $this->visibility
+        ]);
 
         return (string) $source;
     }

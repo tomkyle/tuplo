@@ -2,7 +2,7 @@
 
 namespace tomkyle\Uploader;
 
-trait UploaderAwareTrait 
+trait UploaderAwareTrait
 {
     /**
      * @var Uploader

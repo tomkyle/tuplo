@@ -1,4 +1,5 @@
 <?php
+
 namespace tests;
 
 use tomkyle\Uploader\FlysystemUploader;
@@ -6,12 +7,11 @@ use tomkyle\Uploader\Uploader;
 use League\Flysystem;
 use Prophecy;
 
-
 class FlysystemUploaderTest extends \PHPUnit\Framework\TestCase
 {
-    public function testInstantiation() : FlysystemUploader
+    public function testInstantiation(): FlysystemUploader
     {
-        $prophet = new Prophecy\Prophet;
+        $prophet = new Prophecy\Prophet();
 
         $flysystem_mock = $prophet->prophesize(Flysystem\Filesystem::class);
         $flysystem = $flysystem_mock->reveal();
@@ -26,9 +26,9 @@ class FlysystemUploaderTest extends \PHPUnit\Framework\TestCase
     /**
      * @depends testInstantiation
      */
-    public function testFilesystemSetter( $sut ) : void
+    public function testFilesystemSetter($sut): void
     {
-        $prophet = new Prophecy\Prophet;
+        $prophet = new Prophecy\Prophet();
         $flysystem_mock = $prophet->prophesize(Flysystem\Filesystem::class);
         $flysystem = $flysystem_mock->reveal();
 

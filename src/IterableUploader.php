@@ -2,7 +2,7 @@
 
 namespace tomkyle\Uploader;
 
-class IterableUploader
+class IterableUploader implements UploaderAware
 {
     use UploaderAwareTrait;
 

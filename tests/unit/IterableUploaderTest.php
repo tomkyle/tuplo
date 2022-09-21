@@ -1,16 +1,16 @@
 <?php
+
 namespace tests;
 
 use tomkyle\Uploader\IterableUploader;
 use tomkyle\Uploader\Uploader;
 use Prophecy;
 
-
 class IterableUploaderTest extends \PHPUnit\Framework\TestCase
 {
-    public function testInstantiation() : IterableUploader
+    public function testInstantiation(): IterableUploader
     {
-        $prophet = new Prophecy\Prophet;
+        $prophet = new Prophecy\Prophet();
 
         $uploader_mock = $prophet->prophesize(Uploader::class);
         $uploader = $uploader_mock->reveal();
@@ -27,9 +27,9 @@ class IterableUploaderTest extends \PHPUnit\Framework\TestCase
     /**
      * @depends testInstantiation
      */
-    public function testUploaderSetter( $sut ) : void
+    public function testUploaderSetter($sut): void
     {
-        $prophet = new Prophecy\Prophet;
+        $prophet = new Prophecy\Prophet();
 
         $uploader_mock = $prophet->prophesize(Uploader::class);
         $uploader = $uploader_mock->reveal();
