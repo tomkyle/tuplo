@@ -53,6 +53,10 @@
     },
 
     "scripts": {
+        "post-install-cmd": [
+            "bin/create-tuplofile"
+        ],
+
         "phpcs": [
             "@phpcs:dry"
         ],
