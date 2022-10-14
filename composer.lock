@@ -68,16 +68,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.5.1",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "f14993c6e394450ac4649da35264df0544d0234e"
+                "reference": "8eded334b9894dc90ebdcb7be81e3a1c9413f709"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f14993c6e394450ac4649da35264df0544d0234e",
-                "reference": "f14993c6e394450ac4649da35264df0544d0234e",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8eded334b9894dc90ebdcb7be81e3a1c9413f709",
+                "reference": "8eded334b9894dc90ebdcb7be81e3a1c9413f709",
                 "shasum": ""
             },
             "require": {
@@ -139,7 +139,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.5.1"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.6.0"
             },
             "funding": [
                 {
@@ -155,7 +155,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-18T18:23:19+00:00"
+            "time": "2022-10-13T20:05:14+00:00"
         },
         {
             "name": "league/flysystem-ftp",
@@ -348,16 +348,16 @@
         },
         {
             "name": "league/flysystem-sftp-v3",
-            "version": "3.3.0",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem-sftp-v3.git",
-                "reference": "0f209f7f0ed59de26eb384534c4359e674036b7a"
+                "reference": "84ad0bc92a36a71c42dc68dd04ffedb76dcd616d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-sftp-v3/zipball/0f209f7f0ed59de26eb384534c4359e674036b7a",
-                "reference": "0f209f7f0ed59de26eb384534c4359e674036b7a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-sftp-v3/zipball/84ad0bc92a36a71c42dc68dd04ffedb76dcd616d",
+                "reference": "84ad0bc92a36a71c42dc68dd04ffedb76dcd616d",
                 "shasum": ""
             },
             "require": {
@@ -392,7 +392,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem-sftp-v3/issues",
-                "source": "https://github.com/thephpleague/flysystem-sftp-v3/tree/3.3.0"
+                "source": "https://github.com/thephpleague/flysystem-sftp-v3/tree/3.6.0"
             },
             "funding": [
                 {
@@ -408,7 +408,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-09T10:03:42+00:00"
+            "time": "2022-10-11T11:27:31+00:00"
         },
         {
             "name": "league/mime-type-detection",
