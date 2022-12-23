@@ -24,7 +24,7 @@ Do not forget to make sure Composer’s global commands are available in `$PATH`
 
 ```bash
 # Unix, Linux, et al.
-export PATH="/home/<Username>/.config/composer/vendor/bin:${PATH}"
+export PATH="/home/username/.config/composer/vendor/bin:${PATH}"
 # MacOS
 export PATH="/Users/you/.composer/vendor/bin:${PATH}"
 ```
@@ -79,6 +79,10 @@ $ tuplo typora <file> [file] ...
 ## Development and testing
 
 This repo contains **custom Git hooks** to automate *composer installs* after *composer.lock* has changed after *git pull*. Read more [here.](./git-hooks/README.md)
+
+### Bugs and issues
+
+Any hints are welcome and appreciated! Open a ticket on GitHub’s [issue tracker.](https://github.com/tomkyle/tuplo/issues)
 
 ### Unit tests
 
