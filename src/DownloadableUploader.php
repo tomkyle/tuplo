@@ -34,6 +34,11 @@ class DownloadableUploader implements Uploader
 
         $result = ($this->uploader)($source);
         $result = preg_replace("!^\/!", "", $result);
+
+        if (!is_string($result)) {
+            throw new \UnexpectedValueException("Expected string return value");
+        }
+
         $result = $this->applyRawurlencode($result);
 
         // Restore previous visibility setting
